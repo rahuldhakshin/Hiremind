@@ -1,0 +1,9 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "python manage.py migrate --no-input && python manage.py collectstatic --no-input && gunicorn backend.wsgi --workers 2 --timeout 120 --log-file -"
+healthcheckPath = "/api/auth/login/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3

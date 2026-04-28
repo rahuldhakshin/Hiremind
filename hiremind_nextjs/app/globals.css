@@ -1,0 +1,427 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   ZARA-EDITORIAL COLOR SYSTEM
+   Pure white base · Stark black · No noise
+───────────────────────────────────────────── */
+:root {
+  --bg-base: #eae8e3;
+  --bg-subtle: #e2dfd8;
+  --bg-surface: #eae8e3;
+  --bg-hover: #dedad2;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --text-muted: #000000;
+  --text-ultra-muted: #000000;
+  --border: #e0e0e0;
+  --border-strong: #000000;
+  --accent: #000000;
+  --accent-bright: #000000;
+  --accent-glow: transparent;
+  --danger: #cc0000;
+  --success: #006600;
+  --warning: #cc6600;
+  --info: #003399;
+
+  /* Glass system — now crisp white surfaces */
+  --glass-bg: #ffffff;
+  --glass-bg-hover: #f8f8f8;
+  --glass-border: #e0e0e0;
+  --glass-border-bright: #000000;
+  --glass-shadow: rgba(0, 0, 0, 0.06);
+}
+
+@theme inline {
+  --color-background: #eae8e3;
+  --color-foreground: #000000;
+  --font-sans: "Inter", "Outfit", sans-serif;
+}
+
+/* ─────────────────────────────────────────────
+   RESET & BASE
+───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #eae8e3;
+  color: #000000;
+  font-family: "Inter", "Outfit", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────────
+   GRAIN BG — kept for landing page only
+───────────────────────────────────────────── */
+.grain-bg {
+  display: none; /* Disabled for clean Zara look */
+}
+
+/* ─────────────────────────────────────────────
+   CARD SYSTEM — Crisp white cards, thin borders
+───────────────────────────────────────────── */
+.glass {
+  background: #f5f3ef;
+  border: 1px solid var(--border);
+  transition: all 0.25s ease;
+}
+
+.glass:hover {
+  background: #edeae4;
+  border-color: #000000;
+}
+
+.glass-card {
+  background: #f5f3ef;
+  border: 1px solid var(--border);
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.glass-panel {
+  background: #ffffff;
+  border-right: 1px solid var(--border);
+}
+
+/* ─────────────────────────────────────────────
+   PAGE BANNER — Full-width top banner
+───────────────────────────────────────────── */
+.page-banner {
+  width: 100%;
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.page-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 22px 40px;
+}
+
+.banner-text {
+  color: #ffffff !important;
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+}
+
+/* ─────────────────────────────────────────────
+   INPUTS — Stark, editorial
+───────────────────────────────────────────── */
+.glass-input {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 0px;
+  color: #000000;
+  padding: 14px 18px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  transition: border-color 0.2s ease;
+  outline: none;
+  width: 100%;
+}
+
+.glass-input:focus {
+  border-color: #000000;
+  background: #ffffff;
+}
+
+.glass-input::placeholder {
+  color: #bbbbbb;
+}
+
+/* ─────────────────────────────────────────────
+   BUTTONS — Stark black pill
+───────────────────────────────────────────── */
+.glass-btn {
+  background: #000000;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  color: #ffffff;
+  padding: 12px 28px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.glass-btn:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
+
+.glass-btn-primary {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY — Editorial, Zara-like
+───────────────────────────────────────────── */
+.display-xl {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(72px, 12vw, 180px);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.display-lg {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(48px, 8vw, 120px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.display-md {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(32px, 5vw, 72px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.label-caps {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+/* ─────────────────────────────────────────────
+   SCROLLBAR — minimal
+───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #eae8e3;
+}
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+/* ─────────────────────────────────────────────
+   MONOLITH LANDING ELEMENTS
+───────────────────────────────────────────── */
+.monolith-section {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.monolith-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, #000000, transparent);
+}
+
+/* Company cards — Zara editorial photo grid */
+.company-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 3/4;
+  background: #f0f0f0;
+  border: none;
+}
+
+.company-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.company-card:hover::before {
+  opacity: 0.6;
+}
+
+.company-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%) brightness(0.85);
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+}
+
+.company-card:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0%) brightness(1);
+}
+
+.company-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 20px 18px 18px;
+}
+
+/* ─────────────────────────────────────────────
+   STATUS BADGES — Zara minimal tags
+───────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-success {
+  background: transparent;
+  border: 1px solid var(--success);
+  color: var(--success);
+}
+
+.badge-warning {
+  background: transparent;
+  border: 1px solid var(--warning);
+  color: var(--warning);
+}
+
+.badge-danger {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+
+.badge-info {
+  background: transparent;
+  border: 1px solid var(--info);
+  color: var(--info);
+}
+
+.badge-accent {
+  background: transparent;
+  border: 1px solid #000000;
+  color: #000000;
+}
+
+/* ─────────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.shimmer-line {
+  background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.04) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ─────────────────────────────────────────────
+   ACCESSIBILITY
+───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   LAYOUT UTILITIES
+───────────────────────────────────────────── */
+.container-site {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+@media (max-width: 768px) {
+  .container-site {
+    padding: 0 24px;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* ─────────────────────────────────────────────
+   LANDING PAGE — Beige grain (intro only)
+───────────────────────────────────────────── */
+.landing-body {
+  background: #eae8e3;
+}
+
+/* Moving background for landing only */
+.moving-bg {
+  background: #eae8e3;
+}

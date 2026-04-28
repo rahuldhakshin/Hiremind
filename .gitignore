@@ -1,0 +1,51 @@
+# ── OS ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Python / Django ──────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+*.log
+local_settings.py
+backend/db.sqlite3
+backend/media/
+backend/staticfiles/
+
+# ── Secrets ──────────────────────────────────────────
+.env
+*.env
+.env.local
+.env.*.local
+
+# ── Node / Next.js ───────────────────────────────────
+node_modules/
+hiremind_nextjs/.next/
+hiremind_nextjs/out/
+hiremind_nextjs/build/
+hiremind_nextjs/.turbo/
+
+# ── ML artefacts (large binary) ─────────────────────
+backend/api/ml/*.pkl
+backend/api/ml/*.csv
+
+# ── Misc ─────────────────────────────────────────────
+*.bat
+setup_upgrades.bat
+generate_*.py
+seed_data.py
