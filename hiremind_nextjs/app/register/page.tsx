@@ -16,14 +16,14 @@ const ROLE_OPTIONS = [
 ];
 
 const DEPARTMENTS = [
-  "Computer Science Engineering",
-  "Information Technology",
-  "Electronics & Communication",
-  "Electrical Engineering",
-  "Mechanical Engineering",
-  "Civil Engineering",
-  "Chemical Engineering",
-  "Biotechnology",
+  { value: "CSE",   label: "Computer Science and Engineering" },
+  { value: "IT",    label: "Information Technology" },
+  { value: "ECE",   label: "Electronics and Communication Engineering" },
+  { value: "EEE",   label: "Electrical and Electronics Engineering" },
+  { value: "MECH",  label: "Mechanical Engineering" },
+  { value: "CIVIL", label: "Civil Engineering" },
+  { value: "AIDS",  label: "AI and Data Science" },
+  { value: "OTHER", label: "Other" },
 ];
 
 export default function RegisterPage() {
@@ -236,7 +236,7 @@ export default function RegisterPage() {
                     >
                       <option value="" className="bg-[#e2dfd8]">Select Department</option>
                       {DEPARTMENTS.map((d) => (
-                        <option key={d} value={d} className="bg-[#e2dfd8]">{d}</option>
+                        <option key={d.value} value={d.value} className="bg-[#e2dfd8]">{d.label}</option>
                       ))}
                     </select>
                   </div>
